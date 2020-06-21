@@ -14,17 +14,15 @@ with open(file) as f:
     for index, column_header in enumerate(header_row):
         print(index, column_header)
 
+    # empty function total_months = []
     months = []
     for row in reader: 
-        months.append(row[0])
+        months.append(row[0]) # add months column 0 
 
-
-    # for row in csvreader:
-        # print(row)
-
-# creating a function 
-# total_months = []
-# print(len(string))
+    # empty function profit/loss = []
+    # profit_loss = []
+    # for row in reader:
+    #     profit_loss.
 
 # def pybank(bankdata):
 
@@ -92,5 +90,4 @@ with open(file) as f:
 # print results 
 print('Financial Analysis')
 print('----------------------------')
-print(len(months))
-# print(f'Total Months: {str(len(Months)}'))
+print('Total Months: ' + str(len(months)))
