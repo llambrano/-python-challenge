@@ -13,8 +13,8 @@ with open(file) as f:
         print(index, column_header) # to match index with header
     
     #create lists from columns 
-    months = [] # empty list to store months = []
-    profit_loss = [] # empty list to store profit/loss = []
+    months = [] # empty list to store
+    profit_loss = [] # empty list to store
     change = []
     c = 1 # counter start
 
@@ -22,28 +22,27 @@ with open(file) as f:
         months.append(row[0]) # add all months column 0 
         profit_loss.append(int(row[1])) # add all prof/loss column 1
     
-    for c in range(len(profit_loss)-1):
+    for c in range(len(profit_loss)-1): # loop to calculate change
         change.append(profit_loss[c+1]-profit_loss[c])
 
 # calculations 
 total_months = len(months)
-total_profit_loss = sum(profit_loss) # https://bit.ly/3fPiiiC
+total_profit_loss = sum(profit_loss)
 avg = round(sum(change)/(len(profit_loss)-1),2)
 
+# cal for greatest increase/decrease 
+max_change = max(change)
+min_change = min(change)
+nmonth = change.index(min_change)
 
-    # Profit & Loss 
-    # avg_profit_loss = []
-    # pl_1 = []
-        
-        
-        # Avg change 
-        # for i in range(len(profit)-1):
-        #     pl_1.append()
 
 # print results 
 
 print('Financial Analysis')
 print('----------------------------')
 print(f'Total Months: {(total_months)}') # or print('Total Months: ' + str(len(months))) 
-print(f"Total: ${(total_profit_loss)}")
-print(f"Average  Change: ${(avg)}")
+print(f'Total: ${(total_profit_loss)}')
+print(f'Average  Change: ${(avg)}')
+# print(f'min_change)
+print(months [nmonth + 1])
+print(f'Greatest Increrase in Profits: max_change')
