@@ -28,7 +28,7 @@ with open(file) as f:
 # calculations 
 total_months = len(months)
 total_profit_loss = sum(profit_loss) # https://bit.ly/3fPiiiC
-avg = round(sum(change) / (len(profit_loss)-1),2)
+avg = round(sum(change)/(len(profit_loss)-1),2)
 
 
     # Profit & Loss 
