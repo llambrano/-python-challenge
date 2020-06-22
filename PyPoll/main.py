@@ -1,20 +1,22 @@
 import csv
 import os
 
+from collections import Counter
+
 file = os.path.join('resources', 'election_data.csv')
+
+# create lists from columns 
+voter_id = []
+country = []
+candidate = []
+c = 1 #counter start
 
 with open(file) as f:
     reader = csv.reader(f, delimiter=',')
     header_row = next(reader)
 
-    for index, column_header in enumerate(header_row):
-        print(index, column_header)
-
-    # create lists from columns 
-    voter_id = []
-    country = []
-    candidate = []
-    c = 1 #counter start
+    # for index, column_header in enumerate(header_row):
+    #     print(index, column_header)
 
     # storage data
     for row in reader: # loop to append rows to lists
@@ -25,10 +27,20 @@ with open(file) as f:
 # calculations 
 total_votes = len(voter_id)
 
+candidates = Counter(candidate).keys()
+votes = Counter(candidate)
+
 # print results 
 print('Election Results')
 print('----------------------------')
 print(f'Total Votes : {(total_votes)}')
+print('----------------------------')
+for key,value in votes.items():
+    print(f'{key}, {value/total_votes * 100}, ({value})')
+# print(max(votes.values()))
+# print(votes[max(votes.values())])
+print(max(votes, key=votes.get))
+
 
 
 
