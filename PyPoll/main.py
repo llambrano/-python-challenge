@@ -38,10 +38,25 @@ print('----------------------------')
 for key,value in votes.items():
     print(f'{key}, {value/total_votes:.1%} ({value})')
 print('----------------------------')
-# print(max(votes, key=votes.get))
 print(f'Winner: {max(votes, key=votes.get)}')
 print('----------------------------')
 
+# export results 
+output_file = os.path.join('resources', 'election_results.txt')
+
+with open(output_file, 'w') as datafile: 
+    datafile.write('Election Results\n')
+    datafile.write('----------------------------\n')
+    datafile.write(f'Total Votes : {(total_votes)}\n')
+    datafile.write('----------------------------\n')
+    for key,value in votes.items():
+        datafile.write(f'{key}, {value/total_votes:.1%} ({value})\n')
+    datafile.write('----------------------------\n')
+    datafile.write(f'Winner: {max(votes, key=votes.get)}\n')
+    datafile.write('----------------------------\n')
+
+    # Write in zipped rows
+    # writer.writerows(cleaned_csv)
 
 
 
