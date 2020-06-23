@@ -36,10 +36,11 @@ print('----------------------------')
 print(f'Total Votes : {(total_votes)}')
 print('----------------------------')
 for key,value in votes.items():
-    print(f'{key}, {value/total_votes * 100}, ({value})')
-# print(max(votes.values()))
-# print(votes[max(votes.values())])
-print(max(votes, key=votes.get))
+    print(f'{key}, {value/total_votes:.1%} ({value})')
+print('----------------------------')
+# print(max(votes, key=votes.get))
+print(f'Winner: {max(votes, key=votes.get)}')
+print('----------------------------')
 
 
 
