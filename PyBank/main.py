@@ -9,8 +9,8 @@ with open(file) as f:
     reader = csv.reader(f, delimiter=',')
     header_row = next(reader)
     
-    for index, column_header in enumerate(header_row):
-        print(index, column_header) # to match index with header
+    # for index, column_header in enumerate(header_row):
+    #     print(index, column_header) # to match index with header
     
     #create lists from columns 
     months = [] # empty list to store
@@ -33,16 +33,25 @@ avg = round(sum(change)/(len(profit_loss)-1),2)
 # cal for greatest increase/decrease 
 max_change = max(change)
 min_change = min(change)
-nmonth = change.index(min_change)
+nmonth_min = change.index(min_change)
+nmonth_max = change.index(max_change)
 
+# summary 
+financial_analysis_summary = (
+    'Financial Analysis\n'
+    '----------------------------\n'
+    f'Total Months: {(total_months)}\n' # or print('Total Months: ' + str(len(months))) 
+    f'Total: ${(total_profit_loss)}\n'
+    f'Average  Change: ${(avg)}\n'
+    f'Greatest Increase in Profits: {months [nmonth_max + 1]} (${max_change})\n'
+    f'Greatest Decrease in Profits: {months [nmonth_min + 1]} (${min_change})\n'
+)
 
 # print results 
+print(financial_analysis_summary)
 
-print('Financial Analysis')
-print('----------------------------')
-print(f'Total Months: {(total_months)}') # or print('Total Months: ' + str(len(months))) 
-print(f'Total: ${(total_profit_loss)}')
-print(f'Average  Change: ${(avg)}')
-# print(f'min_change)
-print(months [nmonth + 1])
-print(f'Greatest Increrase in Profits: max_change')
+# export results 
+output_file = os.path.join('financial_analysis.txt')
+
+with open(output_file, 'w') as datafile: 
+    datafile.write(financial_analysis_summary)
