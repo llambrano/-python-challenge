@@ -51,7 +51,7 @@ financial_analysis_summary = (
 print(financial_analysis_summary)
 
 # export results 
-output_file = os.path.join('financial_analysis.txt')
+output_file = os.path.join('analysis', 'financial_analysis.txt')
 
 with open(output_file, 'w') as datafile: 
     datafile.write(financial_analysis_summary)

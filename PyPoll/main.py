@@ -42,7 +42,7 @@ print(f'Winner: {max(votes, key=votes.get)}')
 print('----------------------------')
 
 # export results 
-output_file = os.path.join('election_results.txt')
+output_file = os.path.join('analysis', 'election_results.txt')
 
 with open(output_file, 'w') as datafile: 
     datafile.write('Election Results\n')
