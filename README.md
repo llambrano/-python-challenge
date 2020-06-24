@@ -10,7 +10,7 @@ Using python scripting language to complete two real world analytics challenges 
 
 Creating a Python script for analyzing the financial records of a company. 
 
-> **Given**  
+> ### Given  
 
 A set of financial data `budget_data.csv`. The dataset contains two columns: `Date` and `Profit/Losses`.
 
@@ -24,7 +24,7 @@ A set of financial data `budget_data.csv`. The dataset contains two columns: `Da
 * Greatest increase in profits (date and amount) over the entire period
 * Greatest decrease in losses (date and amount) over the entire period
 
-> **Solution** 
+> ### Solution 
 
 <ins>Setup</ins>
 
@@ -96,7 +96,7 @@ Loop through rows to append data to lists
         with open(output_file, 'w') as datafile: 
             datafile.write(financial_analysis_summary)
 
-> **Final Output** 
+> ### Final Output
 
     Financial Analysis
     ----------------------------
@@ -113,13 +113,13 @@ Loop through rows to append data to lists
 
 Creating a Python script for analyzing election results in a small, rural town. 
 
-> **Given**  
+> ### Given
 
 A set of poll data `election_data.csv`. The dataset contains three columns: `Voter ID`, `County`, and `Candidate`.
 
 ![](images/election_data.png)
 
-> **Tasks**
+> ### Tasks
 
 * Calculate total number of votes cast
 * A complete list of candidates who received votes
@@ -127,7 +127,7 @@ A set of poll data `election_data.csv`. The dataset contains three columns: `Vot
 * The total number of votes each candidate won
 * The winner of the election based on popular vote
 
-> **Solution** 
+> ### Solution
 
 <ins>Setup
 
@@ -201,7 +201,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
         datafile.write(f'Winner: {max(votes, key=votes.get)}\n')
         datafile.write('----------------------------\n')
 
-> **Final Output** 
+> ### Final Output
 
         Election Results
         ----------------------------
