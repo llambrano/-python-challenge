@@ -174,7 +174,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
 
         'Winner: {max(votes, key=votes.get)}'
 
-<ins>Summarizing the results and saving results on a txt file
+<ins>Summarizing the results and saving results to a txt file
 
         # print results 
         print('Election Results')
