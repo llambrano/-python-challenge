@@ -10,7 +10,7 @@ Using python scripting language to complete two real world analytics challenges 
 
 Creating a Python script for analyzing the financial records of a company. 
 
-> ### Given  
+> **Given**
 
 A set of financial data `budget_data.csv`. The dataset contains two columns: `Date` and `Profit/Losses`.
 
@@ -113,13 +113,13 @@ Loop through rows to append data to lists
 
 Creating a Python script for analyzing election results in a small, rural town. 
 
-> ### Given
+> **Given**
 
 A set of poll data `election_data.csv`. The dataset contains three columns: `Voter ID`, `County`, and `Candidate`.
 
 ![](images/election_data.png)
 
-> ### Tasks
+> **Tasks**
 
 * Calculate total number of votes cast
 * A complete list of candidates who received votes
