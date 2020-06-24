@@ -26,7 +26,7 @@ A set of financial data `budget_data.csv`. The dataset contains two columns: `Da
 
 > **Solution** 
 
-### Setup
+<ins>Setup</ins>
 
 Import modules, read source file and skip header 
 
@@ -52,7 +52,7 @@ Loop through rows to append data to lists
         months.append(row[0]) # add all months column 0 
         profit_loss.append(int(row[1])) 
 
-### Calculations to answer the following questions 
+<ins>Calculations to answer the following questions</ins> 
 
 * Total number of months included in the dataset
 
@@ -73,7 +73,7 @@ Loop through rows to append data to lists
         nmonth_min = change.index(min_change)
         nmonth_max = change.index(max_change)
 
-### Summarizing the results 
+<ins>Summarizing the results</ins> 
 
         financial_analysis_summary = (
             'Financial Analysis\n'
@@ -85,18 +85,18 @@ Loop through rows to append data to lists
             f'Greatest Decrease in Profits: {months [nmonth_min + 1]} (${min_change})\n'
         )
 
-### Printing the  results 
+<ins>Printing the  results</ins>
 
         print(financial_analysis_summary)
 
-### Exporting the results 
+<ins>Exporting the results</ins> 
 
         output_file = os.path.join('analysis', 'financial_analysis.txt')
 
         with open(output_file, 'w') as datafile: 
             datafile.write(financial_analysis_summary)
 
-### Final Output 
+> **Final Output** 
 
     Financial Analysis
     ----------------------------
@@ -129,7 +129,7 @@ A set of poll data `election_data.csv`. The dataset contains three columns: `Vot
 
 > **Solution** 
 
-### Setup
+<ins>Setup
 
 Import modules, create lists from columns, and skip header. Append rows to lists
 
@@ -154,7 +154,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
         country.append(row[1])
         candidate.append(row[2])
 
-### Calculations to answer the following questions 
+<ins>Calculations to answer the following questions 
 
 * Calculate total number of votes cast
 
@@ -174,7 +174,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
 
         'Winner: {max(votes, key=votes.get)}'
 
-### Summarizing the results and saving results on a txt file
+<ins>Summarizing the results and saving results on a txt file
 
         # print results 
         print('Election Results')
@@ -201,7 +201,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
         datafile.write(f'Winner: {max(votes, key=votes.get)}\n')
         datafile.write('----------------------------\n')
 
-### Final Output 
+> **Final Output** 
 
         Election Results
         ----------------------------
