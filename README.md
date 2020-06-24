@@ -1,18 +1,18 @@
-# -python-challenge
+
 ###### by Libardo Lambrano
 
-### Background
+## Background <a name="top"></a>
 
-Using python to complete two real world analytics challenges [PyBank](#pybank) and [PyPoll](#pypoll).
+Using python scripting language to complete two real world analytics challenges [PyBank](#pybank) and [PyPoll](#pypoll).
 
-#### PyBank <a name="pybank"></a>
+## PyBank <a name="pybank"></a>
 ![](images/revenue-per-lead.png)
 
 Creating a Python script for analyzing the financial records of a company. 
 
 > **Given**  
 
-A set of financial data `budget_data.csv`. The dataset contains two columns: Date and Profit/Losses.
+A set of financial data `budget_data.csv`. The dataset contains two columns: `Date` and `Profit/Losses`.
 
 ![](images/bank_data.png)
 
@@ -25,6 +25,8 @@ A set of financial data `budget_data.csv`. The dataset contains two columns: Dat
 * Greatest decrease in losses (date and amount) over the entire period
 
 > **Solution** 
+
+### Setup
 
 Import modules, read source file and skip header 
 
@@ -104,7 +106,75 @@ Loop through rows to append data to lists
     Greatest Increase in Profits: Feb-2012 ($1926159)
     Greatest Decrease in Profits: Sep-2013 ($-2196167)
 
-#### PyPoll <a name="pypoll"></a>
+[Back to the top](#top)
+
+## PyPoll <a name="pypoll"></a>
+![](images/Vote_counting.png)
+
+Creating a Python script for analyzing election results in a small, rural town. 
+
+> **Given**  
+
+A set of poll data `election_data.csv`. The dataset contains three columns: `Voter ID`, `County`, and `Candidate`.
+
+![](images/election_data.png)
+
+> **Tasks**
+
+* Calculate total number of votes cast
+* A complete list of candidates who received votes
+* The percentage of votes each candidate won
+* The total number of votes each candidate won
+* The winner of the election based on popular vote
+
+> **Solution** 
+
+### Setup
+
+Import modules, create lists from columns, and skip header. Append rows to lists
+
+    import csv
+    import os
+
+    from collections import Counter
+
+    file = os.path.join('resources', 'election_data.csv')
+
+    voter_id = []
+    country = []
+    candidate = []
+    c = 1 #counter start
+
+    with open(file) as f:
+        reader = csv.reader(f, delimiter=',')
+        header_row = next(reader)
+
+        for row in reader:
+        voter_id.append(row[0])
+        country.append(row[1])
+        candidate.append(row[2])
+
+### Calculations to answer the following questions 
+
+* Calculate total number of votes cast
+
+        total_votes = len(voter_id)
+
+* The total and percentage number of votes each candidate won
+
+        candidates = Counter(candidate).keys()
+        votes = Counter(candidate)
+
+        'Total Votes : {(total_votes)}'
+
+        for key,value in votes.items():
+            '{key}, {value/total_votes:.1%} ({value})'
+
+* The winner of the election based on popular vote
+
+    
+
+
 
 
 
