@@ -172,7 +172,7 @@ Import modules, create lists from columns, and skip header. Append rows to lists
 
 * The winner of the election based on popular vote
 
-    
+<pre><code> 'Winner: {max(votes, key=votes.get)}' </code></pre>
 
 
 
